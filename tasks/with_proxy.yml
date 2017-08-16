@@ -1,0 +1,7 @@
+---
+- name: Install Apigee component for version {{ opdk_version }} or greater with proxy - {{ profile }}
+  command: '{{ apigee_service }} {{ component }} install'
+  environment:
+    http_proxy: "{{ http_proxy }}"
+    https_proxy: "{{ https_proxy }}"
+    no_proxy: "{{ no_proxy }}"
