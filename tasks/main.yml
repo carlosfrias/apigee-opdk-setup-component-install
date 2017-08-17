@@ -8,11 +8,3 @@
   include: with_proxy.yml
   when: https_proxy is defined and https_proxy | trim != '' and http_proxy is defined and http_proxy | trim != ''
 
-- name: Wait for ready
-  ignore_errors: "{{ ignore_errors | default('no') }}"
-  command: '{{ apigee_all }} wait_for_ready'
-  when: validate_ready | default(true)
-
-- name: Validate component status
-  command: '{{ apigee_all }} status'
-

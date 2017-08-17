@@ -1,5 +1,5 @@
 ---
-- name: Install Apigee component with proxy - {{ component}}
+- name: Install Apigee component with proxy - {{ component }}
   shell: '{{ apigee_service }} {{ component }} install'
   environment:
     http_proxy: "{{ http_proxy }}"
