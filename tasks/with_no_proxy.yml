@@ -1,3 +1,3 @@
 ---
-- name: Install Apigee component for version {{ opdk_version }} or greater with no proxy - {{ profile }}
+- name: Install Apigee component with no proxy - {{ component }}
   shell: '{{ apigee_service }} {{ component }} install'

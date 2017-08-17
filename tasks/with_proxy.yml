@@ -1,6 +1,6 @@
 ---
-- name: Install Apigee component for version {{ opdk_version }} or greater with proxy - {{ profile }}
-  command: '{{ apigee_service }} {{ component }} install'
+- name: Install Apigee component with proxy - {{ component}}
+  shell: '{{ apigee_service }} {{ component }} install'
   environment:
     http_proxy: "{{ http_proxy }}"
     https_proxy: "{{ https_proxy }}"
