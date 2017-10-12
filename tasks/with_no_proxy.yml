@@ -1,4 +1,12 @@
 ---
+- name: Uninstall pre-existing Apigee component with no proxy - {{ component }}
+  shell: '/bin/bash {{ apigee_service }} {{ component }} install'
+  when: opdk_debug_mode is not defined or opdk_debug_mode | trim | lower == 'off'
+
+- name: DEBUG_MODE - Uninstall pre-existing Apigee component with no proxy - {{ component }}
+  shell: '/bin/bash -x {{ apigee_service }} {{ component }} install'
+  when: opdk_debug_mode is defined and opdk_debug_mode | trim | lower == 'on'
+
 - name: Install Apigee component with no proxy - {{ component }}
   shell: '/bin/bash {{ apigee_service }} {{ component }} install'
   when: opdk_debug_mode is not defined or opdk_debug_mode | trim | lower == 'off'
