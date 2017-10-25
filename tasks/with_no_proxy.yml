@@ -1,4 +1,7 @@
 ---
+- name: Clear errors
+  meta: clear_host_errors
+
 - name: Install pre-existing Apigee component with no proxy - {{ component }}
   shell: '/bin/bash {{ apigee_service }} {{ component }} install'
   when: opdk_debug_mode is not defined or opdk_debug_mode | trim | lower == 'off'
