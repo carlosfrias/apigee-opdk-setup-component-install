@@ -1,7 +1,8 @@
 ---
 - name: Install Apigee component with proxy - {{ component }}
   shell: '{{ apigee_service }} {{ component }} install'
-  executable: /usr/bin/bash
+  args:
+    executable: /usr/bin/bash
   environment:
     http_proxy: "{{ http_proxy }}"
     https_proxy: "{{ https_proxy }}"
