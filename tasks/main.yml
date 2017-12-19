@@ -1,13 +1,4 @@
 ---
-# tasks file for apigee-opdk-setup-component
-#- name: Use no proxy definitions
-#  include: with_no_proxy.yml
-#  when: https_proxy is not defined or https_proxy | trim == '' and http_proxy is not defined or http_proxy | trim == ''
-
-#- name: Use proxy definitions
-#  include: with_proxy.yml
-#  when: https_proxy is defined and https_proxy | trim != '' and http_proxy is defined and http_proxy | trim != ''
-
 - name: Install Apigee component with proxy - {{ component }}
   shell: '{{ apigee_service }} {{ component }} install'
   environment:
