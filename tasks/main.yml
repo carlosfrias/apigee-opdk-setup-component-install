@@ -1,6 +1,6 @@
 ---
 - name: Install Apigee component with proxy - {{ component }}
-  command: '{{ apigee_service }} {{ component }} install'
+  shell: '{{ apigee_service }} {{ component }} install'
   environment:
     http_proxy: "{{ http_proxy }}"
     https_proxy: "{{ https_proxy }}"
@@ -10,7 +10,7 @@
   when: opdk_debug_mode is not defined or opdk_debug_mode | trim | lower == 'off'
 
 - name: DEBUG_MODE - Install Apigee component - {{ component }}
-  command: '/bin/bash -x {{ apigee_service }} {{ component }} install'
+  shell: '/bin/bash -x {{ apigee_service }} {{ component }} install'
   environment:
     http_proxy: "{{ http_proxy }}"
     https_proxy: "{{ https_proxy }}"
