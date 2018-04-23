@@ -15,31 +15,14 @@ Role Variables
 
 Variable defaults are managed in the role apigee-opdk-setup-default-settings:
 
-Path to the Apigee setup script
-
-     apigee_setup: 
-     
-Name of the installation profile to invoke
-
-     profile: '' 
-     
-Path to the silent installation file
-     
-     opdk_installation_config_file: ''
-     
-Version of OPDK to install
-     
-     opdk_version: '4.16.09'
-     
-Email of the Apigee user
-     
-     opdk_user_email: ''
-     
-Password of the Apigee user
-     
-     opdk_user_pass: ''
-     
-     
+| Variable Name | Description |
+| --- | --- |
+| apigee_setup | Path to the Apigee setup script | 
+| profile | Name of the installation profile to invoke | 
+| opdk_installation_config_file | Path to the silent installation file |
+| opdk_version | Version of OPDK to install |
+| opdk_user_email | Email of the Apigee user |
+| opdk_user_pass | Password of the Apigee user |
 
 Dependencies
 ------------
@@ -54,17 +37,18 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: apigee-opdk-setup-component-install }
 
 License
 -------
 
-Apache
+Apache 2.0
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Carlos Frias
+
 <!-- BEGIN Google Required Disclaimer -->
 
 # Not Google Product Clause
