@@ -1,4 +1,13 @@
 ---
+- name: Setup utilities in cache
+  cache:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_items:
+  - { key: 'apigee_home', value: "{{ apigee_home }}" }
+  - { key: 'apigee_setup', value: "{{ apigee_setup }}" }
+  - { key: 'apigee_all', value: "{{ apigee_all }}" }
+
 - name: Install Apigee component with proxy - {{ component }}
   command: '/opt/apigee/apigee-service/bin/apigee-service {{ component }} install'
   environment:
