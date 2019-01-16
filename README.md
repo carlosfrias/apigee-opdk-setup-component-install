@@ -20,7 +20,7 @@ Variable defaults are managed in the role apigee-opdk-setup-default-settings:
 | apigee_setup | Path to the Apigee setup script | 
 | profile | Name of the installation profile to invoke | 
 | opdk_installation_config_file | Path to the silent installation file |
-| opdk_version | Version of OPDK to install |
+| opdk_version is Version of OPDK to install |
 | opdk_user_email | Email of the Apigee user |
 | opdk_user_pass | Password of the Apigee user |
 
