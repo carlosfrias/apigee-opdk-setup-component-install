@@ -1,12 +1,10 @@
 ---
 - name: Setup utilities in cache
-  cache:
-    key: "{{ item.key }}"
-    value: "{{ item.value }}"
-  with_items:
-  - { key: 'apigee_home', value: "{{ apigee_home }}" }
-  - { key: 'apigee_setup', value: "{{ apigee_setup }}" }
-  - { key: 'apigee_all', value: "{{ apigee_all }}" }
+  set_fact:
+    cacheable: yes
+    apigee_home: "{{ apigee_home }}"
+    apigee_setup: "{{ apigee_setup }}"
+    apigee_all: "{{ apigee_all }}"
 
 - name: Install Apigee component {{ component }}
   command: '/opt/apigee/apigee-service/bin/apigee-service {{ component }} install'
